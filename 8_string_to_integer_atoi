@@ -1,0 +1,39 @@
+def myAtoi(s):
+    """
+    :type s: str
+    :rtype: int
+    """
+    s = s.lstrip()
+    read_sign = s[0]
+    
+    s = s[1:]
+    # print(s)
+    numbers = [0,1,2,3,4,5,6,7,8,9]
+    if read_sign in numbers:
+        num_str = ""
+        for number in s:
+            if number in numbers:
+                num_str += number
+            else:
+                break
+        num = int(num_str)
+        return num
+    elif read_sign == "-":
+        num_str = ""
+        print(s)
+        for number in s:
+            print(number)
+            if number in numbers:
+                print(number)
+                num_str += number
+            else:
+                break
+        print(num_str)
+        num_str = "-" + num_str
+        # print(num_str)
+        num = int(num_str)
+        return num
+    else:
+        return 0
+    
+print(myAtoi("   -042"))
